@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body>
+<h1 th:text="${title}">Title</h1>
+
+<form method="post" style="max-width:600px;">
+    <div class="form-group">
+        <label th:for="name">Cocktail Name:</label>
+    <input type="text" name="cocktailName" />
+    <input type="submit" value="add" />
+    </div>
+</form>
+
+</body>
+</html>

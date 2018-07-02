@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Title</title>
+
+</head>
+<body>
+<h1 th:text="${title}">Title</h1>
+
+<p th:unless="${cocktails} and ${cocktails.size()}">Your List is empty.</p>
+
+<ul>
+    <li th:each="cocktail : ${cocktails}" th:text="${cocktail}"></li>
+</ul>
+
+</body>
+</html>
