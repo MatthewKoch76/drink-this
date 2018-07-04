@@ -1,7 +1,12 @@
 package com.drinkthis.drinkthis.controllers;
 
+import com.drinkthis.drinkthis.models.Ingredient;
+import com.drinkthis.drinkthis.models.data.IngredientDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,12 +17,15 @@ import java.util.HashMap;
 @RequestMapping(value="ingredient")
 public class IngredientController {
 
-    private static HashMap<String, String> ingredients = new HashMap<>();
+    @Autowired
+    private IngredientDao ingredientDao;
+
+    /* private static HashMap<String, String> ingredients = new HashMap<>(); */
 
     @RequestMapping(value = "")
     public String index(Model model){
 
-        model.addAttribute("ingredients", ingredients.keySet());
+        model.addAttribute("ingredients", ingredientDao.findAll());
         model.addAttribute("title", "Ingredients");
         return "ingredients/index";
     }
@@ -25,15 +33,18 @@ public class IngredientController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddIngredientForm(Model model){
 
-        model.addAttribute("title","Add an Ingredient");
+        model.addAttribute(new Ingredient());
+        model.addAttribute("title","Ingredients");
         return "ingredients/add";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddIngredientForm(@RequestParam String ingredientName,
-                                           @RequestParam String ingredientDescription){
+                                           @RequestParam String ingredientDescription,
+                                           @RequestParam String ingredientType){
 
-        ingredients.put(ingredientName, ingredientDescription);
+        Ingredient ingredient = new Ingredient(ingredientName, ingredientDescription, ingredientType);
+        ingredientDao.save(ingredient);
 
         return "redirect:";
     }

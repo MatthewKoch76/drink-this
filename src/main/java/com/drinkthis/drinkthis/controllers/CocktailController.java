@@ -18,7 +18,7 @@ public class CocktailController {
     public String index(Model model){
 
         model.addAttribute("cocktails", cocktails);
-        model.addAttribute("title", "Cocktail");
+        model.addAttribute("title", "Cocktails");
 
         return "cocktails/index";
     }
@@ -26,7 +26,7 @@ public class CocktailController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddCocktailForm(Model model){
 
-        model.addAttribute("title","Add a Cocktail");
+        model.addAttribute("title","Cocktails");
         return "cocktails/add";
     }
 

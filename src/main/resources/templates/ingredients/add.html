@@ -2,20 +2,35 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<body>
+<body class="container">
 <h1 th:text="${title}">Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p></p>
 
 <form method="post" style="max-width:600px;">
     <div class="form-group">
         <label th:for="name">Name:</label>
-        <input type="text" name="ingredientName" />
+        <input type="text" name="ingredientName" placeholder="What is it?" />
     </div>
     <div class="form-group">
         <label th:for="description">Description:</label>
-        <textarea name="ingredientDescription" style="width:300px; height:100px" maxlength="150"/>
+        <input type="text" name="ingredientDescription" placeholder="Tell me a bit about that." />
+    </div>
+    <div class="form-group">
+        <label th:for="type">Type</label>
+        <select name="ingredientType">
+            <option value="Base">Base</option>
+            <option value="Modifier">Modifier</option>
+            <option value="Sour">Sour</option>
+            <option value="Sweet">Sweet</option>
+            <option value="Weak">Weak</option>
+        </select>
     </div>
 
     <input type="submit" value="add" />
 </form>
+
 </body>
 </html>

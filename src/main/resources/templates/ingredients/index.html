@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
+<body class="container">
 <h1 th:text="${title}">Title</h1>
 
-<ul>
-    <li th:each="ingredient : ${ingredients}" th:text="${ingredient}"></li>
-</ul>
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${ingredients} and ${ingredients.size()}">Your List is empty.</p>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Type</th>
+    </tr>
+
+    <tr th:each="ingredient : ${ingredients}">
+        <td th:text="${ingredient.name}"></td>
+        <td th:text="${ingredient.description}"></td>
+        <td th:text="${ingredient.type}"></td>
+    </tr>
+
+</table>
+
 
 </body>
 </html>
