@@ -9,12 +9,118 @@
 
 <p></p>
 
-<form method="post" style="max-width:600px;">
+<form method="post" style="max-width:800px;">
+    <!-- name -->
     <div class="form-group">
         <label th:for="name">Cocktail Name:</label>
     <input type="text" name="cocktailName" />
-    <input type="submit" value="add" />
     </div>
+
+    <!-- recipe -->
+    <div class="form-group">
+        <label th:for="recip1">First Ingredient:</label>
+        <input type="text" name="recip1string" />
+
+    <select name="recip1quant">
+        <option value="1 dash">1 dash</option>
+        <option value="2 dashes">2 dashes</option>
+        <option value="1/4 oz">1/4 oz</option>
+        <option value="1/2 oz">1/2 oz</option>
+        <option value="3/4 oz">3/4 oz</option>
+        <option value="1 oz">1 oz</option>
+        <option value="1 1/4 oz">1 1/4 oz</option>
+        <option value="1 1/2 oz">1 1/2 oz</option>
+        <option value="1 3/4 oz">1 3/4 oz</option>
+        <option value="2 oz">2 oz</option>
+        <option value="3 oz">3 oz</option>
+    </select>
+    </div>
+    <div class="form-group">
+        <label th:for="recip2">Second Ingredient:</label>
+        <input type="text" name="recip2string" />
+
+        <select name="recip2quant">
+            <option value="1 dash">1 dash</option>
+            <option value="2 dashes">2 dashes</option>
+            <option value="1/4 oz">1/4 oz</option>
+            <option value="1/2 oz">1/2 oz</option>
+            <option value="3/4 oz">3/4 oz</option>
+            <option value="1 oz">1 oz</option>
+            <option value="1 1/4 oz">1 1/4 oz</option>
+            <option value="1 1/2 oz">1 1/2 oz</option>
+            <option value="1 3/4 oz">1 3/4 oz</option>
+            <option value="2 oz">2 oz</option>
+            <option value="3 oz">3 oz</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label th:for="recip3">Third Ingredient:</label>
+        <input type="text" name="recip3string" />
+
+        <select name="recip3quant">
+            <option value="1 dash">1 dash</option>
+            <option value="2 dashes">2 dashes</option>
+            <option value="1/4 oz">1/4 oz</option>
+            <option value="1/2 oz">1/2 oz</option>
+            <option value="3/4 oz">3/4 oz</option>
+            <option value="1 oz">1 oz</option>
+            <option value="1 1/4 oz">1 1/4 oz</option>
+            <option value="1 1/2 oz">1 1/2 oz</option>
+            <option value="1 3/4 oz">1 3/4 oz</option>
+            <option value="2 oz">2 oz</option>
+            <option value="3 oz">3 oz</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label th:for="recip4">Fourth Ingredient:</label>
+        <input type="text" name="recip4string" />
+
+        <select name="recip4quant">
+            <option value="1 dash">1 dash</option>
+            <option value="2 dashes">2 dashes</option>
+            <option value="1/4 oz">1/4 oz</option>
+            <option value="1/2 oz">1/2 oz</option>
+            <option value="3/4 oz">3/4 oz</option>
+            <option value="1 oz">1 oz</option>
+            <option value="1 1/4 oz">1 1/4 oz</option>
+            <option value="1 1/2 oz">1 1/2 oz</option>
+            <option value="1 3/4 oz">1 3/4 oz</option>
+            <option value="2 oz">2 oz</option>
+            <option value="3 oz">3 oz</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label th:for="recip5">Fifth Ingredient:</label>
+        <input type="text" name="recip5string" />
+
+        <select name="recip5quant">
+            <option value="1 dash">1 dash</option>
+            <option value="2 dashes">2 dashes</option>
+            <option value="1/4 oz">1/4 oz</option>
+            <option value="1/2 oz">1/2 oz</option>
+            <option value="3/4 oz">3/4 oz</option>
+            <option value="1 oz">1 oz</option>
+            <option value="1 1/4 oz">1 1/4 oz</option>
+            <option value="1 1/2 oz">1 1/2 oz</option>
+            <option value="1 3/4 oz">1 3/4 oz</option>
+            <option value="2 oz">2 oz</option>
+            <option value="3 oz">3 oz</option>
+        </select>
+    </div>
+
+    <!-- prep -->
+    <div class="form-group">
+        <label th:for="cocktailPrep">Prep:</label>
+        <textarea name="cocktailPrep" />
+    </div>
+
+    <!-- garnish -->
+    <div class="form-group">
+        <label th:for="cocktailGarnish">Garnish:</label>
+        <input type="text" name="cocktailGarnish" />
+    </div>
+
+    <input type="submit" value="add" />
 </form>
 
 </body>

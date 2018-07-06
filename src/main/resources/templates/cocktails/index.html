@@ -9,7 +9,7 @@
 <p th:unless="${cocktails} and ${cocktails.size()}">Your List is empty.</p>
 
 <ul>
-    <li th:each="cocktail : ${cocktails}" th:text="${cocktail}"></li>
+    <li th:each="cocktail : ${cocktails}" th:text="${cocktail.name}"></li>
 </ul>
 
 </body>
