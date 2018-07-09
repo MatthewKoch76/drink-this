@@ -49,4 +49,21 @@ public class IngredientController {
         return "redirect:";
     }
 
+    @RequestMapping(value = "remove", method = RequestMethod.GET)
+    public String displayRemoveIngredientForm(Model model) {
+        model.addAttribute("ingredients", ingredientDao.findAll());
+        model.addAttribute("title", "Remove Ingredient");
+        return "ingredients/remove";
+    }
+
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String processRemoveIngredientForm(@RequestParam int[] ingredientIds) {
+
+        for (int ingredientId : ingredientIds) {
+            ingredientDao.delete(ingredientId);
+        }
+
+        return "redirect:";
+    }
+
 }

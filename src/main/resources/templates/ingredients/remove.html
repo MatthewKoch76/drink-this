@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+<br />
+
+<form method="post">
+
+    <div th:each="ingredient : ${ingredients}" class="checkbox">
+        <input type="checkbox" name="ingredientIds" th:value="${ingredient.id}" th:id="${ingredient.id}"/>
+        <label th:for="${ingredient.id}" th:text="${ingredient.name}"></label>
+        <br />
+    </div>
+
+    <input type="submit" value="Remove Ingredient" />
+</form>
+
+</body>
+</html>

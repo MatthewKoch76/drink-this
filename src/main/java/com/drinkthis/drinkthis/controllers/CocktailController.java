@@ -87,6 +87,23 @@ public class CocktailController {
         return "redirect:";
     }
 
+    @RequestMapping(value = "remove", method = RequestMethod.GET)
+    public String displayRemoveCocktailForm(Model model) {
+        model.addAttribute("cocktails", cocktailDao.findAll());
+        model.addAttribute("title", "Remove Cocktail");
+        return "cocktails/remove";
+    }
+
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String processRemoveCocktailForm(@RequestParam int[] cocktailIds) {
+
+        for (int cocktailId : cocktailIds) {
+            cocktailDao.delete(cocktailId);
+        }
+
+        return "redirect:";
+    }
+
 
 
 }

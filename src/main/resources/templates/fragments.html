@@ -10,26 +10,13 @@
 </head>
 <body>
 
-<select th:fragment="quantselect">
-    <option value="dash(es)">dash(es)</option>
-    <option value="1/4">1/4</option>
-    <option value="1/2">1/2</option>
-    <option value="3/4">3/4</option>
-    <option value="1">1</option>
-    <option value="1 1/4">1 1/4</option>
-    <option value="1 1/2">1 1/2</option>
-    <option value="1 3/4">1 3/4</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-
-</select>
-
-
 <nav th:fragment="navigation">
         <a href="/cocktail/">Cocktails</a> |
         <a href="/ingredient">Ingredients</a> |
         <a href="/cocktail/add">Add Cocktail</a> |
-        <a href="/ingredient/add">Add Ingredient</a>
+        <a href="/cocktail/remove">Remove Cocktail</a> |
+        <a href="/ingredient/add">Add Ingredient</a> |
+        <a href="/ingredient/remove">Remove Ingredient</a>
 </nav>
 
 </body>

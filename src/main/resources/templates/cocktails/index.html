@@ -7,7 +7,7 @@
 <nav th:replace="fragments :: navigation"></nav>
 
 <p th:unless="${cocktails} and ${cocktails.size()}">Your List is empty.</p>
-
+<br />
 <ul>
     <li th:each="cocktail : ${cocktails}" th:text="${cocktail.name}"></li>
 </ul>

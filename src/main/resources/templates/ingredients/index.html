@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
+
+<script type="text/javascript">
+
+
+</script>
+
 <body class="container">
 <h1 th:text="${title}">Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
-
+<br />
 <p th:unless="${ingredients} and ${ingredients.size()}">Your List is empty.</p>
 
 <table class="table">
     <tr>
-        <th>Name</th>
+        <th onclick="sortTable(0)">Name</th>
         <th>Description</th>
-        <th>Type</th>
+        <th onclick="sortTable(1)">Type</th>
     </tr>
 
     <tr th:each="ingredient : ${ingredients}">
