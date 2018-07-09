@@ -2,6 +2,7 @@ package com.drinkthis.drinkthis.controllers;
 
 import com.drinkthis.drinkthis.models.Cocktail;
 import com.drinkthis.drinkthis.models.data.CocktailDao;
+import com.drinkthis.drinkthis.models.data.IngredientDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,9 @@ public class CocktailController {
     @Autowired
     private CocktailDao cocktailDao;
 
+    @Autowired
+    private IngredientDao ingredientDao;
+
     @RequestMapping(value="")
     public String index(Model model){
 
@@ -31,6 +35,24 @@ public class CocktailController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddCocktailForm(Model model){
 
+        ArrayList<String> quantities = new ArrayList<>();
+        quantities.add("1/4 oz");
+        quantities.add("1/2 oz");
+        quantities.add("3/4 oz");
+        quantities.add("1 oz");
+        quantities.add("1 1/4 oz");
+        quantities.add("1 1/2 oz");
+        quantities.add("1 3/4 oz");
+        quantities.add("2 oz");
+        quantities.add("2 1/4 oz");
+        quantities.add("2 1/2 oz");
+        quantities.add("3 oz");
+        quantities.add("2 oz");
+        quantities.add("1 dash");
+        quantities.add("2 dashes");
+
+        model.addAttribute("quantities", quantities);
+        model.addAttribute("ingredients", ingredientDao.findAll());
         model.addAttribute("title","Cocktails");
         return "cocktails/add";
     }
