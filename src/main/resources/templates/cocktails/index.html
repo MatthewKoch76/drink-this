@@ -8,9 +8,22 @@
 
 <p th:unless="${cocktails} and ${cocktails.size()}">Your List is empty.</p>
 <br />
-<ul>
-    <li th:each="cocktail : ${cocktails}" th:text="${cocktail.name}"></li>
-</ul>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Method</th>
+        <th>Garnish</th>
+    </tr>
+
+    <tr th:each="cocktail : ${cocktails}">
+        <td><a href="http://www.google.com"><p th:text="${cocktail.name}"></p></a></td>
+        <td th:text="${cocktail.prep}"></td>
+        <td th:text="${cocktail.garnish}"></td>
+    </tr>
+
+</table>
+
 
 </body>
 </html>
