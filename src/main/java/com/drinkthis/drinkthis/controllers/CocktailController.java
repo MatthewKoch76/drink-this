@@ -28,11 +28,11 @@ public class CocktailController {
     private IngredientDao ingredientDao;
 
     @RequestMapping(value="")
-    public String index(Model model){
+    public String index(Model model, @RequestParam String searchTerm) {
+
 
         model.addAttribute("cocktails", cocktailDao.findAll());
         model.addAttribute("title", "Cocktails");
-
         return "cocktails/index";
     }
 
