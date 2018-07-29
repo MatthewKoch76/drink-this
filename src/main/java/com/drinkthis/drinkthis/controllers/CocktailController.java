@@ -28,7 +28,7 @@ public class CocktailController {
     private IngredientDao ingredientDao;
 
     @RequestMapping(value="")
-    public String index(Model model, @RequestParam String searchTerm) {
+    public String index(Model model) {
 
 
         model.addAttribute("cocktails", cocktailDao.findAll());
@@ -74,7 +74,8 @@ public class CocktailController {
                                          @RequestParam String recip4quant,
                                          @RequestParam String recip5quant,
                                          @RequestParam String cocktailPrep,
-                                         @RequestParam String cocktailGarnish
+                                         @RequestParam String cocktailGarnish,
+                                         @RequestParam String cocktailImage
                                          ){
 
         HashMap<String, String> cocktailRecipe = new HashMap<>();
@@ -85,7 +86,7 @@ public class CocktailController {
         cocktailRecipe.put(recip5quant, recip5string);
 
 
-        Cocktail cocktail = new Cocktail(cocktailName, cocktailRecipe, cocktailPrep, cocktailGarnish);
+        Cocktail cocktail = new Cocktail(cocktailName, cocktailRecipe, cocktailPrep, cocktailGarnish, cocktailImage);
         cocktailDao.save(cocktail);
 
         return "redirect:";

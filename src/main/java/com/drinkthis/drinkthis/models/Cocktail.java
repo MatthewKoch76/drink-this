@@ -29,11 +29,14 @@ public class Cocktail {
     @Size(min=3)
     private String garnish;
 
-    public Cocktail(String name, HashMap recipe, String prep, String garnish){
+    private String image;
+
+    public Cocktail(String name, HashMap recipe, String prep, String garnish, String image){
         this.name = name;
         this.prep = prep;
         this.recipe = recipe;
         this.garnish = garnish;
+        this.image = image;
     }
 
     public Cocktail(){}
@@ -72,5 +75,13 @@ public class Cocktail {
 
     public void setRecipe(HashMap recipe) {
         this.recipe = recipe;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
