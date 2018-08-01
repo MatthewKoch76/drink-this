@@ -12,7 +12,7 @@
     <!-- name -->
     <div class="form-group">
         <label th:for="name">Cocktail Name:</label>
-    <input type="text" name="cocktailName" />
+    <input type="text" name="cocktailName" placeholder="something snappy" />
     </div>
 
     <!-- recipe -->
@@ -80,13 +80,14 @@
     <!-- prep -->
     <div class="form-group">
         <label th:for="cocktailPrep">Prep:</label>
-        <textarea name="cocktailPrep" />
+        <textarea name="cocktailPrep" cols="50" placeholder="Shake, Stir, Swizzle, etc"/>
+        <span th:errors name="cocktailPrep"></span>
     </div>
 
     <!-- garnish -->
     <div class="form-group">
         <label th:for="cocktailGarnish">Garnish:</label>
-        <input type="text" name="cocktailGarnish" />
+        <input type="text" name="cocktailGarnish" placeholder="make it pretty"/>
     </div>
 
     <!-- image -->

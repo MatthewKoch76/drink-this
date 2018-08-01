@@ -17,7 +17,7 @@
     </tr>
 
     <tr th:each="cocktail : ${cocktails}">
-        <td><a href="http://www.google.com"><p th:text="${cocktail.name}"></p></a></td>
+        <td><a th:href="@{/show/{id}(id=${cocktail.id})}"><p th:text="${cocktail.name}"></p></a></td>
         <td th:text="${cocktail.prep}"></td>
         <td th:text="${cocktail.garnish}"></td>
     </tr>
