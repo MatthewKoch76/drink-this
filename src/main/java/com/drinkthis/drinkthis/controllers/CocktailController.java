@@ -106,17 +106,19 @@ public class CocktailController {
         return "redirect:";
     }
 
-    @RequestMapping(value = "show/{cocktail.id}", method = RequestMethod.GET)
-    public String showCocktailDetails(@PathVariable int id, Model model) {
+    @RequestMapping(value = "show", method = RequestMethod.GET)
+    public String show(Model model) {
+
         // pull cocktail by id
+        //Cocktail cocktail = cocktailDao.findOne(id);
 
         // add to show template
-        model.addAttribute("cocktails", cocktailDao.findOne(id));
+        //model.addAttribute("cocktails", "hello");
         model.addAttribute("title", "Show Cocktail");
 
-        // make sure show.html exists in your template directory
+        // make sure one.html exists in your template directory
 
 
-        return "show/show";
+        return "cocktails/show";
     }
 }
