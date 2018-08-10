@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Set;
 
 @Controller
 @RequestMapping(value="cocktail")
@@ -106,14 +108,16 @@ public class CocktailController {
         return "redirect:";
     }
 
-    @RequestMapping(value = "show", method = RequestMethod.GET)
-    public String show(Model model) {
+    @RequestMapping(value = "show/{id}", method = RequestMethod.GET)
+    public String show(@PathVariable int id, Model model) {
 
         // pull cocktail by id
-        //Cocktail cocktail = cocktailDao.findOne(id);
+        Cocktail cocktail = cocktailDao.findOne(id);
+        HashMap recipe = cocktail.getRecipe();
 
         // add to show template
-        //model.addAttribute("cocktails", "hello");
+        model.addAttribute("recipe",recipe);
+        model.addAttribute("cocktail", cocktail);
         model.addAttribute("title", "Show Cocktail");
 
         // make sure one.html exists in your template directory

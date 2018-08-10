@@ -5,7 +5,33 @@
 <h1 th:text="${title}">Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
+<br />
+<h2 align="center" th:text="${cocktail.name}"></h2>
+<br />
 
+
+    <table width="300">
+        <tr>
+        <th> Quantity </th>
+        <th> Ingredient </th>
+        </tr>
+
+        <tr th:each="item : ${recipe}">
+            <td th:text="${item.key}"></td>
+            <td th:text="${item.value}"></td>
+        </tr>
+</table>
+<br />
+<p>Preparation:</p>
+<p th:text="${cocktail.prep}"></p>
+<br />
+<p>Garnish:</p>
+<p th:text="${cocktail.garnish}"></p>
+<br />
+<p>Image:</p>
+<img th:src="${cocktail.image}" alt="image" style="width:200px;height:200px;" />
+<br />
+<a th:href="${cocktail.image}">Full Size Image</a>
 
 </body>
 </html>
