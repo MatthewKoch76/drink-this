@@ -11,13 +11,13 @@
 <form method="post" style="max-width:800px;">
     <!-- name -->
     <div class="form-group">
-        <label th:for="name">Cocktail Name:</label>
+        <label th:for="name" onclick="show(1)">Cocktail Name:</label>
     <input type="text" name="cocktailName" placeholder="something snappy" />
     </div>
 
     <!-- recipe -->
     <div class="form-group">
-        <label th:for="recip1">1st Ingredient:</label>
+        <label th:for="recip1" onclick="show(2)">1st Ingredient:</label>
         <select name="recip1string">
             <option value="">none</option>
             <option th:each="ingredient : ${ingredients}" th:text="${ingredient.name}"></option>
@@ -29,7 +29,7 @@
     </select>
     </div>
     <div class="form-group">
-        <label th:for="recip2">2nd Ingredient:</label>
+        <label th:for="recip2" onclick="show(3)">2nd Ingredient:</label>
         <select name="recip2string">
             <option value="">none</option>
             <option th:each="ingredient : ${ingredients}" th:text="${ingredient.name}"></option>
@@ -41,7 +41,7 @@
         </select>
     </div>
     <div class="form-group">
-        <label th:for="recip3">3rd Ingredient:</label>
+        <label th:for="recip3" onclick="show(4)">3rd Ingredient:</label>
         <select name="recip3string">
             <option value="">none</option>
             <option th:each="ingredient : ${ingredients}" th:text="${ingredient.name}"></option>
@@ -53,7 +53,7 @@
         </select>
     </div>
     <div class="form-group">
-        <label th:for="recip4">4th Ingredient:</label>
+        <label th:for="recip4" onclick="show(5)">4th Ingredient:</label>
         <select name="recip4string">
             <option value="">none</option>
             <option th:each="ingredient : ${ingredients}" th:text="${ingredient.name}"></option>
@@ -65,7 +65,7 @@
         </select>
     </div>
     <div class="form-group">
-        <label th:for="recip5">5th Ingredient:</label>
+        <label th:for="recip5" onclick="show(6)">5th Ingredient:</label>
         <select name="recip5string">
             <option value="">none</option>
             <option th:each="ingredient : ${ingredients}" th:text="${ingredient.name}"></option>
@@ -79,24 +79,60 @@
 
     <!-- prep -->
     <div class="form-group">
-        <label th:for="cocktailPrep">Prep:</label>
+        <label th:for="cocktailPrep" onclick="show(7)">Prep:</label>
         <textarea name="cocktailPrep" cols="50" placeholder="Shake/Stir/Swizzle"/>
     </div>
 
     <!-- garnish -->
     <div class="form-group">
-        <label th:for="cocktailGarnish">Garnish:</label>
+        <label th:for="cocktailGarnish" onclick="show(8)">Garnish:</label>
         <input type="text" name="cocktailGarnish" placeholder="make it pretty"/>
     </div>
 
     <!-- image -->
     <div class="form-group">
-        <label th:for="cocktailImage">Image Url:</label>
+        <label th:for="cocktailImage" onclick="show(9)">Image Url:</label>
         <input type="text" name="cocktailImage" placeholder="optional" />
     </div>
 
     <input type="submit" value="add" />
 </form>
+
+<div align="right">
+    <p>Click on the label for each category for guidance!</p>
+</div>
+
+<script>
+    function show(x){
+    if(x == 1){
+    return alert("Don't skimp on a creative name!")}
+    else if(x == 2){
+    return alert("Usually something from the Base Spirit Category")
+    }
+    else if(x == 3){
+    return alert("This is the traditional Modifier position")
+    }
+    else if(x == 4){
+    return alert("This is usually the sour ingredient")
+    }
+    else if(x == 5){
+    return alert("This is usually the sweet component")
+    }
+    else if(x == 6){
+    return alert("Bitters are most common in this field")
+    }
+    else if(x == 7){
+    return alert("Maybe include some basic instructions regarding technique")
+    }
+    else if(x == 8){
+    return alert("Describe something with a little bit of specificity, ie twist vs wedge")
+    }
+    else if(x == 9){
+    return alert("Try a google image search!")
+    }
+    }
+
+</script>
 
 </body>
 </html>

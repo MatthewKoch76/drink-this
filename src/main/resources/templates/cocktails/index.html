@@ -11,32 +11,29 @@
 
 <table class="table" id="toSort">
     <tr>
-        <th onclick="simpleFunc(0)">Name</th>
-        <th onclick="simpleFunc(1)">Method</th>
-        <th onclick="simpleFunc(2)">Garnish</th>
+        <th>Name</th>
+        <th>Method</th>
+        <th>Garnish</th>
+        <th>Photo</th>
     </tr>
 
     <tr th:each="cocktail : ${cocktails}">
         <td><a th:href="@{/cocktail/show/{id}(id=${cocktail.id})}"><p th:text="${cocktail.name}"></p></a></td>
         <td th:text="${cocktail.prep}"></td>
         <td th:text="${cocktail.garnish}"></td>
+        <td><button th:text="show" onclick="changePic()"></button><img src="" id="testPic" /></td>
     </tr>
 
 </table>
 
+
+
 <script>
-    function simpleFunc(n){
-    if(n == 0){
-    alert("The Name of the Cocktail");
-    }else if(n == 1){
-    alert("The Name of the Method of Preparation");
-    }else if(n == 2){
-    alert("The Name of the Garnish");
-    }
-    }
+    function changePic(x){
+    document.getElementById("testPic").src = "https://tedxcoconutgrove.org/img/logos/eureka.png";
 
+    }
 </script>
-
 
 </body>
 </html>

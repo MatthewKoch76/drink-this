@@ -9,7 +9,7 @@
 <h2 align="center" th:text="${cocktail.name}"></h2>
 <br />
 
-
+<aside class="aside">
     <table width="300">
         <tr>
         <th> Quantity </th>
@@ -21,11 +21,13 @@
             <td th:text="${item.value}"></td>
         </tr>
 </table>
+</aside>
+
 <br />
-<p>Preparation:</p>
+<p><strong>Preparation:</strong></p>
 <p th:text="${cocktail.prep}"></p>
 <br />
-<p>Garnish:</p>
+<p><strong>Garnish:</strong></p>
 <p th:text="${cocktail.garnish}"></p>
 <br />
 <p>Image:</p>
@@ -33,5 +35,13 @@
 <br />
 <a th:href="${cocktail.image}">Full Size Image</a>
 
+<footer>
+    <br />
+
+    <script>
+        var d = new Date();
+        document.write("You are visiting this page on "+d);
+    </script>
+</footer>
 </body>
 </html>
